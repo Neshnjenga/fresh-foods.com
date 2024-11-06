@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post">
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="">Username</label>
+            <input type="text" name="username" value="{{data[1]}}">
+        </div>
+        <div class="col-lg-6">
+            <label for="">Address</label>
+            <input type="text" name="address" value="{{data[4]}}">
+        </div>
+        <div class="col-lg-6">
+            <label for="">Phone.No</label>
+            <input type="text" name="phone" value="{{data[3]}}">
+        </div>
+        <div class="col-lg-6">
+            <label for="">Food or drink</label>
+            <input type="text" name="food" value="{{user[1]}}">
+        </div>
+        <div class="col-lg-6">
+            <label for="">Price</label>
+            <input type="text" name="price" value="{{user[2]}}">
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-primary" type="submit">Order</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

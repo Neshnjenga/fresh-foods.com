@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8a42449199.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .navbar{
+            background-color: white;
+            box-shadow: 2px 1px 5px  black;
+            justify-content: space-between;
+            display: flex;
+            padding: 20px;
+        }
+        .acc a{
+            text-decoration: none;
+            color: red;
+            margin-left: 10px;
+        }
+        .acc a:hover{
+            color: black;
+            transition: ease 0.05s all;
+        }
+        .navs a{
+            text-decoration: none;
+            color: red;
+            margin-left: 10px;
+        }
+        .navs a:hover{
+            color: black;
+            transition: ease 0.05s all;
+            
+        }
+        .image img{
+            height: 400px;
+            width: 100%;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .elements{
+           background-color: white;
+           width: 100%; 
+           box-shadow: 2px 2px 2px 2px grey;
+           margin-top: 10px;
+           height: auto;
+        }
+        .thumbnail{
+           background-color: white;
+           width: 100%; 
+           box-shadow: 2px 2px 2px 2px grey;
+           margin-top: 10px;
+           height: auto;
+        }
+        form{
+            margin: 100px auto;
+            width: 500px;
+            box-shadow: 2px 1px 5px  black;
+            padding: 10px;
+            
+            border-radius: 10px;
+        }
+        input{
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 2px 1px 5px  black;
+            border-radius: 2px;
+            margin-bottom: 5px;
+
+        }
+        .drinks{
+           background-color: white;
+           width: 100%; 
+           padding: 15px;
+           box-shadow: 2px 2px 10px black;
+           margin-top: 10px;
+           overflow-x: hidden;
+        }
+        .drinks .image img{
+            width: 100%;
+            height: auto;
+        }
+        label{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            
+            <h2><i class="fa-solid fa-hotel fa-beat"></i> Fresh Foods</h2>
+        </div>
+        <div class="acc">
+            {% if session['role']=='admin' %}
+            <a href="">About</a>
+            <a href="/mailSend">Mail</a>
+            <a href="/home">Home</a>
+            <a href="/addFood">Add food</a>
+            <a href="/addDrink">Add drinks</a>
+            <a href="/manage">Manage</a>
+            <a href="/manageOrders">Orders</a>
+            {% else %}
+            <a href="/viewOrder">Orders</a>
+            <a href="/home">Home</a>
+            <a href="">About</a>
+            <a href="">Contact us</a>
+            {% endif %}
+        </div>
+        <div class="navs">
+            {% if 'username' not in session %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            {% else %}
+            <a href="/logout">Logout</a>
+            {% endif %}
+        </div>
+    </div>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

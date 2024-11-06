@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post" style="width: 350px; padding: 10px;">
+    <div class="col-lg-12"><label for="">Action</label></div>
+    <div class="col-lg-12">
+        <select name="action" id="" style="width: 100%; margin-bottom: 10px;">
+            <option value="authorized">Authorized</option>
+            <option value="declined">Declined</option>
+        </select>
+    </div>
+    <div class="col-lg-3">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+
+</form>
+{% endblock %}

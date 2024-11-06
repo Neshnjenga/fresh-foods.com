@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post" enctype="multipart/form-data">
+    <h1 style="text-align: center; color: blue;">Food</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="text" name="name" placeholder="Enter the name of the food" required>
+            <input type="text" name="price" placeholder="Enter the price of the food" required>
+            <input type="file" name="image" placeholder="Enter image" required>
+        </div>
+        <div class="col-lg-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

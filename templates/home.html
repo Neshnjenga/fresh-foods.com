@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="elements">
+                <div class="image">
+                    <div class="drink">
+                        <a href="/viewDrink"> <img src="/static/images/drinks.webp" alt=""></a>
+                    </div> 
+                    <h4 style="padding: 5px; color: red;">Drinks</h4>
+                </div>
+            </div>
+           
+        </div>
+        <div class="col-lg-6">
+            <div class="thumbnail">
+                <div class="image">
+                    <div class="food">
+                        <a href="/viewFood"><img src="/static/images/food.avif" alt=""></a>
+                    </div> 
+                </div>
+                <h4 style="padding: 5px; color: red;">Food</h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

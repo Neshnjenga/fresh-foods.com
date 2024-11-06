@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Food or drink</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    {% for main in data %}
+    <tr>
+        <td>{{main[2]}}</td>
+        <td>{{main[3]}}</td>
+        <td>{{main[4]}}</td>
+        <td>{{main[5]}}</td>
+        <td>{{main[6]}}</td>
+        <td>
+            {% if main[7]=='Made' %}
+            <button class="btn btn-secondary">Made</button>
+            <a href="/authorize/{{main[0]}}" class="btn btn-outline-warning">Waiting</a>
+            {% elif main[7]=='declined' %}
+            <button class="btn btn-danger">No product</button>
+            {% else %}
+            <button class="btn btn-primary">Done</button>
+            <button class="btn btn-success">Delivered</button>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
